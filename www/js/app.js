@@ -3,7 +3,7 @@
 (function(){
 
     angular
-        .module('evaluon', ['ionic','evaluon.auth'])
+        .module('evaluon', ['ionic','evaluon.auth', 'evaluon.user'])
         .run(run)
         .config(config)
 
