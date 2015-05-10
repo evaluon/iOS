@@ -1,4 +1,26 @@
-/* Empty. Add your own CSS if you like */
 .aria-description{
     display: none;
+}
+
+.img-responsive{
+    height: auto;
+    max-width: 80%;
+}
+
+.button-menu{
+    background: none;
+    border: none;
+}
+
+.img-menu{
+    width: 100%;
+    height: 100%;
+}
+
+.icon{
+    text-align: center;
+}
+
+.icon a h2{
+    font-size: 16px;
 }
