@@ -12,7 +12,7 @@
             .state('login', {
                 url: '/login',
                 templateUrl: 'views/auth/login.html',
-                controller: 'LoginController',
+              i  controller: 'LoginController',
                 controllerAs: 'vm'
             })
             .state('singup', {
@@ -20,6 +20,11 @@
                 templateUrl: 'views/auth/singup.html',
                 controller: 'SingupController',
                 controllerAs: 'vm'
+            })
+            .state('recover', {
+                url: '/recover',
+                templateUrl: 'views/auth/recover.html',
+                controller: 'RecoverController'
             });
     };
 })();
