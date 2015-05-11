@@ -1,9 +1,10 @@
-'use strict';
-
 (function(){
+    'use strict';
+
     angular
-        .module('evaluon.auth', ['ui.router'])
-        .config(config);
+        .module('evaluon.auth', ['ui.router', 'LocalStorageModule'])
+        .config(config)
+        .run(run);
 
     function config($stateProvider){
 
@@ -20,6 +21,29 @@
                 templateUrl: 'views/auth/singup.html',
                 controller: 'SingupController',
                 controllerAs: 'vm'
+            })
+            .state('recover', {
+                url: '/recover',
+                templateUrl: 'views/auth/recover.html',
+                controller: 'RecoverController'
             });
     };
+
+    function run($rootScope, Auth, localStorageService){
+
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams){
+
+            if(!localStorageService.isSupported) {
+
+            }
+
+            if(!Auth.clientLogged()){
+                Auth.client().then(function(data){
+                    Auth.loginClient(data);
+                });
+            }
+
+            
+        });
+    }
 })();

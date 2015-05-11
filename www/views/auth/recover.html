@@ -1,0 +1,16 @@
+<ion-view view-title="Recordar contraseña">
+    <ion-content class="padding">
+        <form class="list" name="recoverForm">
+            <label class="item item-input">
+                <span class="input-label">Correo</span>
+                <input name="email" type="email" ng-model="user.email"
+                     aria-describedby="login-email" required>
+                <p class="aria-description" id="login-email">
+                    Ingrese el correo
+                </p>
+            </label>
+            <input class="button button-block button-calm" type="button"
+                    value="Aceptar" ng-disabled="recoverForm.$invalid">
+        </form>
+    </ion-content>
+</ion-view>

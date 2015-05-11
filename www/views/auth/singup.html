@@ -1,0 +1,77 @@
+<ion-view view-title="Registro">
+    <ion-content class="padding">
+        <form class="list" name="singupForm">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Número de documento</span>
+                <input type="text">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Nombres</span>
+                <input type="text">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Apellidos</span>
+                <input type="text" placeholder="">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Fecha de nacimiento</span>
+                <input type="number" placeholder="aammdd" ng-maxlength="8" 
+                        ng-minlength="8">
+            </label>
+             <label class="item item-input item-stacked-label">
+                 <span class="input-label">Correo</span>
+                 <input type="email">
+             </label>
+             <label class="item item-input item-stacked-label">
+                 <span class="input-label">Contraseña</span>
+                 <input type="password">
+             </label>
+             <label class="item item-input item-stacked-label">
+                 <span class="input-label">Repite la contraseña</span>
+                 <input type="password">
+             </label>
+             <label class="item item-input item-select">
+                 <div class="input-label">
+                   Género
+                 </div>
+                 <select>
+                     <option ng-repeat="gender in genders">
+                         {{gender.description}}
+                     </option>
+                 </select>
+              </label>
+             <label class="item item-input item-select">
+                 <div class="input-label">
+                   Condición visual
+                 </div>
+                 <select>
+                     <option ng-repeat="disability in disabilities">
+                         {{disability.description}}
+                     </option>
+                 </select>
+              </label>
+             <label class="item item-input item-select">
+                 <div class="input-label">
+                   Tipo de usuario
+                 </div>
+                 <select>
+                     <option ng-repeat="type in types">
+                         {{type.description}}
+                     </option>
+                 </select>
+              </label>
+             <label class="item item-input item-select">
+                 <div class="input-label">
+                   Nivel de formación
+                 </div>
+                 <select>
+                     <option ng-repeat="level in levels">
+                         {{level.description}}
+                     </option>
+                 </select>
+              </label>
+              <input type="button" class="button button-block button-calm"
+                      value="Registrar">
+        </form>
+    </ion-content>
+</ion-view>

@@ -14,7 +14,7 @@
   width: auto;
   height: $range-slider-height + 15;
   outline: none;
-  background: -webki#00427at-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $range-default-track-bg), color-stop(100%, $range-default-track-bg));
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $range-default-track-bg), color-stop(100%, $range-default-track-bg));
   background: linear-gradient(to right, $range-default-track-bg 0%, $range-default-track-bg 100%);
   background-position: center;
   background-size: 99% $range-track-height;
