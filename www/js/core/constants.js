@@ -19,8 +19,9 @@
     .constant(
         'access', {
             client: {
-                id: 'HhlMhODaflThcTRoDKWA/DvCbq/Qk9+OlRb+xjpmggo=',
-                secret: 'db8eb0675856129cc28ad88c093d0f326e6dce6c'
+                grant_type: 'client_credentials',
+                client_id: 'administrator',
+                client_secret: 'kv0Ls8xoIFPdE2GXMK5fodQsAEBV5GzzINZOA0NX99E='
             },
             password: function(user, password){
 
