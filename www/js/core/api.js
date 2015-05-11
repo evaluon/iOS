@@ -5,7 +5,7 @@
 
             url: {
                 protocol: 'http',
-                host: 'psadvance-desktop-api.herokuapp.com'
+                host: 'evaluon.gentebool.com:80'
             },
             route: function(path){
                 var url = this.url;
@@ -19,6 +19,9 @@
     var api = {
         // Root: Url id
         id: apiRouter.id,
+
+        // Auth module
+        token: apiRouter.route('auth/token')
 
     };
 
