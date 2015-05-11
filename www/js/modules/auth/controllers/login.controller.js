@@ -5,8 +5,13 @@
         .module('evaluon.auth')
         .controller('LoginController', LoginController);
 
-    function LoginController(){
-        var vm = this;
+    function LoginController($scope, Auth){
+
+        $scope.login = function(user){
+            Auth.password(user.email, user.password).then(function(data){
+                console.log(data);
+            });
+        };
     };
 
 })();
