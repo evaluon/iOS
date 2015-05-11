@@ -3,7 +3,8 @@
 
     angular
         .module('evaluon.auth', ['ui.router'])
-        .config(config);
+        .config(config)
+        .run(run);
 
     function config($stateProvider){
 
@@ -12,7 +13,7 @@
             .state('login', {
                 url: '/login',
                 templateUrl: 'views/auth/login.html',
-              i  controller: 'LoginController',
+                controller: 'LoginController',
                 controllerAs: 'vm'
             })
             .state('singup', {
@@ -27,4 +28,8 @@
                 controller: 'RecoverController'
             });
     };
+
+    function run(){
+
+    }
 })();
