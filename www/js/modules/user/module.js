@@ -15,13 +15,18 @@
                 controller: 'HomeController',
             });
             
-            //Evaluation states
+        //Evaluation states
         $stateProvider
         
             .state('evaluation', {
                url: '/evaluation',
                templateUrl: 'views/user/evaluation/institutions.html',
-               controller: 'Evaluation.InstitutionController'
+               controller: 'Evaluation.InstitutionsController'
+            })
+            .state('evaluation-groups', {
+                url: '/evaluation/institution/:id/groups',
+                templateUrl: 'views/user/evaluation/groups.html',
+                controller: 'Evaluation.GroupsController'
             });
     };
 
