@@ -3,9 +3,9 @@
 	
 	angular
 		.module('evaluon.user')
-		.controller('Evaluation.InstitutionController', InstitutionController);
+		.controller('Evaluation.InstitutionsController', InstitutionsController);
 		
-	function InstitutionController($scope, Institution, list){
+	function InstitutionsController($scope, Institution, list){
 		
 		$scope.institutions = [];
 		getInstitutions();
@@ -13,8 +13,7 @@
 		function getInstitutions(){
 			Institution.getList().then(function(data){
 				$scope.institutions = list.doubled(data);
-				console.log($scope.institutions);
 			});
-		}
+		};
 	};
 })();
