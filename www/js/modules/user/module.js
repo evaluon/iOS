@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('evaluon.user', ['ui.router'])
+        .module('evaluon.user', ['ui.router', 'ngUnderscore'])
         .config(config);
 
     function config($stateProvider){
@@ -13,6 +13,15 @@
                 url: '/home',
                 templateUrl: 'views/user/home.html',
                 controller: 'HomeController',
+            });
+            
+            //Evaluation states
+        $stateProvider
+        
+            .state('evaluation', {
+               url: '/evaluation',
+               templateUrl: 'views/user/evaluation/institutions.html',
+               controller: 'Evaluation.InstitutionController'
             });
     };
 
