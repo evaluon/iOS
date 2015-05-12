@@ -8,6 +8,6 @@
     function LogoutController(Auth, $state){
 
         Auth.logout();
-        $state.go('login');        
+        $state.go('login');
     };
 })();

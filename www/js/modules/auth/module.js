@@ -17,7 +17,8 @@
             })
             .state('logout', {
                 url: '/logout',
-                controller: 'LoginController',
+                cache: false,
+                controller: 'LogoutController',
             })
             .state('singup', {
                 url: '/singup',
