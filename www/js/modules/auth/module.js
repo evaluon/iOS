@@ -13,14 +13,16 @@
             .state('login', {
                 url: '/login',
                 templateUrl: 'views/auth/login.html',
+                controller: 'LoginController'
+            })
+            .state('logout', {
+                url: '/logout',
                 controller: 'LoginController',
-                controllerAs: 'vm'
             })
             .state('singup', {
                 url: '/singup',
                 templateUrl: 'views/auth/singup.html',
-                controller: 'SingupController',
-                controllerAs: 'vm'
+                controller: 'SingupController'
             })
             .state('recover', {
                 url: '/recover',
