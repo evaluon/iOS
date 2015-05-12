@@ -8,6 +8,11 @@
 	function InstitutionsController($scope, Institution, list){
 		
 		$scope.institutions = [];
+		
+		$scope.routes = {
+			groups : 'evaluation-groups'	
+		};
+		
 		getInstitutions();
 		
 		function getInstitutions(){
