@@ -37,13 +37,11 @@
 
             }
 
-            if(!Auth.client()){
+            if(!Auth.clientLogged()){
                 Auth.client().then(function(data){
                     Auth.loginClient(data);
                 });
             }
-
-
         });
     }
 })();

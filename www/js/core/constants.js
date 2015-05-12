@@ -20,8 +20,8 @@
         'access', {
             client: {
                 grant_type: 'client_credentials',
-                id: 'administrator',
-                secret: 'kv0Ls8xoIFPdE2GXMK5fodQsAEBV5GzzINZOA0NX99E='
+                client_id: 'administrator',
+                client_secret: 'kv0Ls8xoIFPdE2GXMK5fodQsAEBV5GzzINZOA0NX99E='
             },
             password: function(user, password){
 

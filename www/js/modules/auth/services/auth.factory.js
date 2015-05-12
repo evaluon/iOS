@@ -10,7 +10,7 @@
         return{
 
             client: function(){
-
+                
                 return $http({
                     method: 'post',
                     url: api.token,
@@ -24,7 +24,7 @@
             },
 
             password: function(username, password){
-                var client = this.client(),
+                var client = this.clientLogged(),
                             tokenType = client.token_type,
                             token = client.access_token;
 
@@ -65,7 +65,7 @@
                 );
             },
 
-            client: function(){
+            clientLogged: function(){
                 return localStorageService.get(
                     CryptoJS.SHA1(tokens.client)
                 );
