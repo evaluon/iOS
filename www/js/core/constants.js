@@ -27,10 +27,8 @@
 
                 return {
                     grant_type: 'password',
-                    client_id: this.client.id,
-                    client_secret: this.client.secret,
                     username: user,
-                    password: password
+                    password: CryptoJS.SHA1(password).toString()
                 }
             },
             refresh: function(refresh_token){

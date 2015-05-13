@@ -13,14 +13,17 @@
             .state('login', {
                 url: '/login',
                 templateUrl: 'views/auth/login.html',
-                controller: 'LoginController',
-                controllerAs: 'vm'
+                controller: 'LoginController'
+            })
+            .state('logout', {
+                url: '/logout',
+                cache: false,
+                controller: 'LogoutController',
             })
             .state('singup', {
                 url: '/singup',
                 templateUrl: 'views/auth/singup.html',
-                controller: 'SingupController',
-                controllerAs: 'vm'
+                controller: 'SingupController'
             })
             .state('recover', {
                 url: '/recover',
@@ -42,8 +45,6 @@
                     Auth.loginClient(data);
                 });
             }
-
-            
         });
     }
 })();

@@ -21,7 +21,13 @@
         id: apiRouter.id,
 
         // Auth module
-        token: apiRouter.route('auth/token')
+        token: apiRouter.route('auth/token'),
+
+        // User module
+        user: apiRouter.route('user'),
+        
+        // Institution module
+        institution: apiRouter.route('institution')
 
     };
 
