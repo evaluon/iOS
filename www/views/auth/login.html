@@ -1,6 +1,6 @@
 <ion-view view-title="Iniciar Sesión">
     <ion-content class="padding">
-        <form class="list" name="logginForm">
+        <form class="list" name="loginForm" ng-submit="login(user)">
             <label class="item item-input">
                 <span class="input-label">Correo</span>
                 <input name="email" type="email" ng-model="user.email"
@@ -11,14 +11,14 @@
             </label>
             <label class="item item-input">
                 <span class="input-label">Contraseña</span>
-                <input name="password" type="password" ng-model="user.password"
+                <input name="password" type="password" ng-model="user.password",.--
                         aria-describedby="login-password" required>
                 <p class="aria-description" id="login-password">
                     Ingrese la contraseña
                 </p>
             </label>
-            <input type="button" class="button button-block button-calm"
-                ng-disabled="logginForm.$invalid" value="Iniciar Sesión">
+            <input type="submit" class="button button-block button-calm"
+                ng-disabled="loginForm.$invalid" value="Iniciar Sesión">
         </form>
         <button class="button button-block button-calm" ui-sref="singup">
             Registrarse

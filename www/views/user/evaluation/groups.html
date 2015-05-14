@@ -1,0 +1,18 @@
+<ion-view view-title="Grupos">
+    <ion-content class="padding">
+        <div class="row padding" ng-repeat="row in groups">
+            <div class="col col-50 icon" ng-repeat="group in row">
+                <a ui-sref="{{routes.tests}}({id: {{group.id}}})">
+                    <h2>
+                        {{group.id}} - {{group.user.first_name}}
+                        {{group.user.last_name}}
+                    </h2>
+                    <menu-icon ref="{{routes.tests}}({id: {{group.id}}})"
+                            img="http://placehold.it/180/FFFFFF/00427a&text={{group.user.first_name[0]}}{{group.user.last_name[0]}}"
+                            description="{{group.id}} - {{group.user.first_name}} {{group.user.last_name}}">
+                    </menu-icon>
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

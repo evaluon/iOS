@@ -21,7 +21,26 @@
         id: apiRouter.id,
 
         // Auth module
-        token: apiRouter.route('auth/token')
+        token: apiRouter.route('auth/token'),
+
+        // User module
+        user: apiRouter.route('user'),
+
+        // Institution module
+        institution: apiRouter.route('institution'),
+
+        // Group module
+        group: apiRouter.route('evaluee/group'),
+
+        // Test module
+        test: apiRouter.route('test'),
+        active: '/active',
+        open: '/open',
+        close: '/close',
+        groupUR: '/group',
+        knowledgeArea: '/knowledgearea',
+        question: '/question',
+        response: apiRouter.route('response')
 
     };
 
