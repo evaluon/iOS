@@ -33,8 +33,9 @@
         group: apiRouter.route('evaluee/group'),
 
         // Test module
-        test: '/test',
-        active: '/active'
+        test: apiRouter.route('test'),
+        active: '/active',
+        groupUR: '/group'
 
     };
 
