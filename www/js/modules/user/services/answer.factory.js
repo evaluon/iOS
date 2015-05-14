@@ -37,7 +37,7 @@
 
                             return $http({
                                 method: 'post',
-                                url: api.url + api.response,
+                                url: api.response,
                                 headers: {
                                     Authorization:  headers.authorization(
                                         tokenType, token

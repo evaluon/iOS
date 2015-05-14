@@ -39,7 +39,8 @@
         close: '/close',
         groupUR: '/group',
         knowledgeArea: '/knowledgearea',
-        question: '/question'
+        question: '/question',
+        response: apiRouter.route('response')
 
     };
 
