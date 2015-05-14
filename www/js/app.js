@@ -6,9 +6,12 @@
         .run(run)
         .config(config)
 
-    function config($stateProvider, $urlRouterProvider){
+    function config($stateProvider, $urlRouterProvider, $httpProvider){
 
         $urlRouterProvider.otherwise('/login');
+
+        //Interceptor
+        $httpProvider.interceptors.push('interceptor');
     }
 
     function run($ionicPlatform){
