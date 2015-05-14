@@ -3,7 +3,7 @@
 
     angular
         .module('evaluon.user')
-        .controller('Evaluation.PasswordController', PasswordController);
+        .controller('PasswordController', PasswordController);
 
     function PasswordController($scope, $state, Test){
 
