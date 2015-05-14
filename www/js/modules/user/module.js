@@ -49,6 +49,21 @@
                 templateUrl: 'views/user/evaluation/test.html',
                 controller: 'Evaluation.TestController'
             });
+
+        //Results states
+
+        $stateProvider
+
+            .state('results-institution', {
+               url: '/results/institutions',
+               templateUrl: 'views/user/results/institutions.html',
+               controller: 'Results.InstitutionsController'
+            })
+            .state('results', {
+                url: '/institution/:id/results',
+                templateUrl: 'views/user/results/results.html',
+                controller: 'ResultsController'
+            });
     };
 
 })();
