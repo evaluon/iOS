@@ -32,6 +32,16 @@
                 url: '/evaluation/group/:id/tests',
                 templateUrl: 'views/user/evaluation/tests.html',
                 controller: 'Evaluation.TestsController'
+            })
+            .state('evaluation-password', {
+                url: '/evaluation/test/:id/password',
+                templateUrl: 'views/user/evaluation/password.html',
+                controller: 'Evaluation.PasswordController'
+            })
+            .state('evaluation-knowledgeAreas', {
+                url: '/evaluation/test/:id/knowledge-areas',
+                templateUrl: 'views/user/evaluation/knowledge-areas.html',
+                controller: 'Evaluation.KnowledgeAreas'
             });
     };
 
