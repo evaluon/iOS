@@ -5,7 +5,7 @@
     .module('evaluon.user')
     .factory('Answer' , Answer);
 
-    function Answer($http, Auth, api, headers){
+    function Answer($http, $q, Auth, api, headers){
 
         return{
             send: function(test, data){
