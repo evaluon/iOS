@@ -14,10 +14,10 @@
                 templateUrl: 'views/user/home.html',
                 controller: 'HomeController',
             });
-            
+
         //Evaluation states
         $stateProvider
-        
+
             .state('evaluation', {
                url: '/evaluation',
                templateUrl: 'views/user/evaluation/institutions.html',
@@ -27,6 +27,11 @@
                 url: '/evaluation/institution/:id/groups',
                 templateUrl: 'views/user/evaluation/groups.html',
                 controller: 'Evaluation.GroupsController'
+            })
+            .state('evaluation-tests', {
+                url: '/evaluation/group/:id/tests',
+                templateUrl: 'views/user/evaluation/tests.html',
+                controller: 'Evaluation.TestsController'
             });
     };
 
