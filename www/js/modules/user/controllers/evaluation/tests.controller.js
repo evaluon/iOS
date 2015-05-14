@@ -7,22 +7,34 @@
 
     function TestsController($scope, $state, Test, list, $ionicHistory){
 
-        var group = $state.params.id;
+        var group = $state.params.id
+        ,   name = $state.current.name;
 
         $scope.tests = [];
 
         $scope.routes = {
-            password: 'evaluation-password'
+            password: name=='self' ? 'self-knowledgeAreas':'evaluation-password'
         };
 
         getTests();
 
         function getTests(){
-            Test.getList(group).then(function(data){
-                $scope.tests = data;
-            }).catch(function(){
-                $ionicHistory.goBack();
-            });
+
+            if(name == "self"){
+                Test.getSelfList().then(function(data){
+                    $scope.tests = data;
+                }).catch(function(){
+                    $ionicHistory.goBack();
+                })
+            }
+            else{
+                Test.getList(group).then(function(data){
+                    $scope.tests = data;
+                }).catch(function(){
+                    $ionicHistory.goBack();
+                });
+            }
         };
+
     };
 })();

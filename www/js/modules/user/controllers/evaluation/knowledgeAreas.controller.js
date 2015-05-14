@@ -3,14 +3,15 @@
 
     angular
         .module('evaluon.user')
-        .controller('Evaluation.KnowledgeAreas', KnowledgeAreas);
+        .controller('KnowledgeAreas', KnowledgeAreas);
 
     function KnowledgeAreas($scope, $state, KnowledgeArea, list, msg){
 
-        var test = $state.params.id;
+        var test = $state.params.id
+        ,   name = $state.current.name;
 
         $scope.routes = {
-            test: 'evaluation-test',
+            test: name == 'self-knowledgeAreas' ? 'self-test':'evaluation-test',
             testId: test
         };
 

@@ -46,7 +46,10 @@
         results: apiRouter.route('results'),
 
         //Indicators module
-        indicator: apiRouter.route('indicator')
+        indicator: apiRouter.route('indicator'),
+
+        //Self module
+        self: 'self'
 
     };
 
