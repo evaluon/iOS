@@ -63,7 +63,8 @@
             .state('self-knowledgeAreas', {
                 url: '/self/test/:id/knowledge-areas',
                 templateUrl: 'views/user/evaluation/knowledge-areas.html',
-                controller: 'KnowledgeAreas'
+                controller: 'KnowledgeAreas',
+                cache: false
             })
             .state('self-test', {
                 url: '/self/test/:id/knowledge-area/:area',
