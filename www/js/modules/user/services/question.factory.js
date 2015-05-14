@@ -14,8 +14,6 @@
                 ,   tokenType = user.token_type
                 ,   token = user.access_token;
 
-                console.log(test,area)
-
                 return $http({
                     method: 'get',
                     url: '{0}{1}/{2}'.format(
