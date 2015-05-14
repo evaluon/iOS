@@ -1,17 +1,19 @@
 (function(){
 	'use strict';
-	
+
 	angular
 		.module('evaluon.user')
 		.factory('Institution', Institution);
-		
+
 	function Institution(Auth, $http, api, headers){
+
 		return{
+			
 			getList: function(){
 				var user = Auth.userLogged()
 				,	tokenType = user.token_type
 				,	token = user.access_token;
-				
+
 				return $http({
 					method: 'get',
 					url: api.institution,
