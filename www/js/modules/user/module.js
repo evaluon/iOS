@@ -64,6 +64,16 @@
                 templateUrl: 'views/user/results/results.html',
                 controller: 'ResultsController'
             });
+
+        //indicators states
+
+        $stateProvider
+
+            .state('indicators', {
+                url: '/indicators',
+                templateUrl: 'views/user/indicators/indicators.html',
+                controller: 'IndicatorsController'
+            })
     };
 
 })();
