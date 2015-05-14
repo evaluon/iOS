@@ -30,7 +30,11 @@
         institution: apiRouter.route('institution'),
 
         // Group module
-        group: apiRouter.route('evaluee/group')
+        group: apiRouter.route('evaluee/group'),
+
+        // Test module
+        test: '/test',
+        active: '/active'
 
     };
 
