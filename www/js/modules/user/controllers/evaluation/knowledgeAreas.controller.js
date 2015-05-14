@@ -29,7 +29,11 @@
 
         function getKnowledgeAreas(){
             KnowledgeArea.getList(test).then(function(data){
-                $scope.knowledgeAreas = list.doubled(data);
+                if(data.length == 0){
+                    msg.show('Mensaje', 'Evaluación enviada exitosamente');
+                    $state.go('home');
+                }
+                else $scope.knowledgeAreas = list.doubled(data);
             });
         };
     }
