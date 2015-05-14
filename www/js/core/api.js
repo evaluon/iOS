@@ -35,6 +35,7 @@
         // Test module
         test: apiRouter.route('test'),
         active: '/active',
+        open: '/open',
         groupUR: '/group'
 
     };
