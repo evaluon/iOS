@@ -46,7 +46,7 @@
             .state('evaluation-test', {
                 url: '/evaluation/test/:id/knowledge-area/:area',
                 templateUrl: 'views/user/evaluation/test.html',
-                controller: 'Evaluation.Test'
+                controller: 'Evaluation.TestController'
             });
     };
 
