@@ -20,9 +20,29 @@
                     url: '{0}{1}/{2}{3}'.format(
                         api.test, api.groupUR, group, api.active
                         ),
-                    headers:{
+                    headers: {
                         'Authorization': headers.authorization(tokenType, token)
                     },
+                }).then(function(response){
+                    return response.data.data;
+                });
+            },
+
+            login: function(test, hotp){
+
+                var user = Auth.userLogged()
+                ,   tokenType = user.token_type
+                ,   token = user.access_token;
+
+                return $http({
+                    method: 'post',
+                    url: '{0}{1}'.format(api.id(api.test, test), api.open),
+                    headers: {
+                        'Authorization': headers.authorization(tokenType, token)
+                    },
+                    data: {
+                        hotp: hotp
+                    }
                 }).then(function(response){
                     return response.data.data;
                 });
