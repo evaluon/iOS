@@ -40,7 +40,10 @@
         groupUR: '/group',
         knowledgeArea: '/knowledgearea',
         question: '/question',
-        response: apiRouter.route('response')
+        response: apiRouter.route('response'),
+
+        //Results module
+        results: apiRouter('/results')
 
     };
 
