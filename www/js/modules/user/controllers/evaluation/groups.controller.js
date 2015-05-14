@@ -3,7 +3,7 @@
 
 	angular
 		.module('evaluon.user')
-		.controller('Evaluation.GroupsController', GroupsController);
+		.controller('GroupsController', GroupsController);
 
 	function GroupsController($scope, $state, Group, list){
 
