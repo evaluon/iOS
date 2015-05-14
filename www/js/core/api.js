@@ -36,6 +36,7 @@
         test: apiRouter.route('test'),
         active: '/active',
         open: '/open',
+        close: '/close',
         groupUR: '/group'
 
     };
