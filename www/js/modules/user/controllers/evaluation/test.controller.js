@@ -3,7 +3,7 @@
 
     angular
         .module('evaluon.user')
-        .controller('Evaluation.TestController', TestController);
+        .controller('TestController', TestController);
 
     function TestController(
         $scope, $state, msg, $ionicHistory, Question, Answer, _
