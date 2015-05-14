@@ -25,9 +25,12 @@
 
         // User module
         user: apiRouter.route('user'),
-        
+
         // Institution module
-        institution: apiRouter.route('institution')
+        institution: apiRouter.route('institution'),
+
+        // Group module
+        group: apiRouter.route('evaluee/group')
 
     };
 
