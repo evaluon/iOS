@@ -39,7 +39,7 @@
         close: '/close',
         groupUR: '/group',
         knowledgeArea: '/knowledgearea',
-        questions: '/questions'
+        question: '/question'
 
     };
 
