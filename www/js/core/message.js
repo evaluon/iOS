@@ -5,7 +5,7 @@
     .module('evaluon')
     .service('msg', msg);
 
-    function msg(){
+    function msg($ionicPopup){
         this.show = function(title, message){
 
             if(navigator && navigator.notification){
@@ -15,7 +15,7 @@
                 var alertPopup = $ionicPopup.alert({
                     title: title,
                     template: message,
-                    okType: 'button-inci'
+                    okType: 'button-calm'
                 });
             }
         };
@@ -43,7 +43,7 @@
                     template: message,
                     cancelText: 'Cancelar',
                     okText: 'Aceptar',
-                    okType: 'button-inci'
+                    okType: 'button-calm'
                 });
                 confirmPopup.then(function(res) {
                     if(res) {
