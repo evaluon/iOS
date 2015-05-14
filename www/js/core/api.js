@@ -43,7 +43,7 @@
         response: apiRouter.route('response'),
 
         //Results module
-        results: apiRouter('/results')
+        results: apiRouter.route('results')
 
     };
 
