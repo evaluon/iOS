@@ -37,7 +37,8 @@
         active: '/active',
         open: '/open',
         close: '/close',
-        groupUR: '/group'
+        groupUR: '/group',
+        knowledgeArea: '/knowledgearea'
 
     };
 
