@@ -38,7 +38,8 @@
         open: '/open',
         close: '/close',
         groupUR: '/group',
-        knowledgeArea: '/knowledgearea'
+        knowledgeArea: '/knowledgearea',
+        questions: '/questions'
 
     };
 
