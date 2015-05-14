@@ -24,3 +24,7 @@
 .icon a h2{
     font-size: 16px;
 }
+
+a:link {
+    text-decoration: none;
+}
