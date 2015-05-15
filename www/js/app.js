@@ -33,7 +33,7 @@
             });
     };
 
-    function run($ionicPlatform){
+    function run($rootScope, $ionicPlatform){
         $ionicPlatform.ready(function() {
 
           if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -43,6 +43,10 @@
             StatusBar.styleLightContent();
           }
         });
+
+        $rootScope.validate = function(form, camp){
+            return form[camp].$invalid && form[camp].$dirty
+        };
     }
 
 })();
