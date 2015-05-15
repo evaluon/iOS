@@ -13,7 +13,10 @@
             .state('login', {
                 url: '/login',
                 templateUrl: 'views/auth/login.html',
-                controller: 'LoginController'
+                controller: 'LoginController',
+                data:{
+                    role: 4
+                }
             })
             .state('logout', {
                 url: '/logout',
@@ -23,16 +26,22 @@
             .state('singup', {
                 url: '/singup',
                 templateUrl: 'views/auth/singup.html',
-                controller: 'SingupController'
+                controller: 'SingupController',
+                data:{
+                    role: 4
+                }
             })
             .state('recover', {
                 url: '/recover',
                 templateUrl: 'views/auth/recover.html',
-                controller: 'RecoverController'
+                controller: 'RecoverController',
+                data:{
+                    role: 4
+                }
             });
     };
 
-    function run($rootScope, Auth, localStorageService){
+    function run($rootScope, Auth, localStorageService, $state){
 
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams){
 
@@ -44,6 +53,23 @@
                 Auth.client().then(function(data){
                     Auth.loginClient(data);
                 });
+            }
+
+            if(!toState.data) toState.data = {role: 8};
+
+            if(!(toState.data.role == 2)){
+
+                if(!(toState.data.role == 4) && !Auth.userLogged()){
+                    event.preventDefault();
+                    if(toState.name = "home") $state.go('login');
+                    else $state.go('403');
+                }
+
+                if((toState.data.role == 4) && Auth.userLogged()){
+                    event.preventDefault();
+                    $state.go('home');
+                }
+
             }
         });
     }
