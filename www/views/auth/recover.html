@@ -1,15 +1,20 @@
 <ion-view view-title="Recordar contraseña">
     <ion-content class="padding">
-        <form class="list" name="recoverForm">
+        <form class="list" name="recoverForm" ng-submit="recover(user.email)">
             <label class="item item-input">
                 <span class="input-label">Correo</span>
                 <input name="email" type="email" ng-model="user.email"
-                     aria-describedby="login-email" required>
+                     aria-describedby="login-email"
+                     ng-pattern="/^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i"
+                     required>
                 <p class="aria-description" id="login-email">
                     Ingrese el correo
                 </p>
+                <span ng-if="validate(recoverForm, 'email')" class="text-assertive">
+                    Tiene que ser un correo válido
+                </span>
             </label>
-            <input class="button button-block button-calm" type="button"
+            <input class="button button-block button-calm" type="submit"
                     value="Aceptar" ng-disabled="recoverForm.$invalid">
         </form>
     </ion-content>
