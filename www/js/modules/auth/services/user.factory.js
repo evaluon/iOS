@@ -23,6 +23,27 @@
                     return response.data.data;
                 });
 
+            },
+
+            recover: function(mail){
+
+                var user = Auth.clientLogged()
+                ,   tokenType = user.token_type
+                ,   token = user.access_token;
+
+                return $http({
+                    method: 'delete',
+                    url: api.user,
+                    headers: {
+                        'Authorization': headers.authorization(tokenType, token),
+                        'Content-type': headers.json
+                    },
+                    data:{
+                        mail: mail
+                    }
+                }).then(function(response){
+                    return response.data.data
+                });
             }
         };
     };
