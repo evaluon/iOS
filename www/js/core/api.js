@@ -25,6 +25,7 @@
 
         // User module
         user: apiRouter.route('user'),
+        evaluee: apiRouter.route('evaluee'),
 
         // Institution module
         institution: apiRouter.route('institution'),

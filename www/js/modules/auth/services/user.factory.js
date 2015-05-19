@@ -25,6 +25,42 @@
 
             },
 
+            create: function(add){
+                var user = token || Auth.clientLogged()
+                ,   tokenType = user.token_type
+                ,   token = user.access_token;
+
+                return $http({
+                    method: 'post',
+                    url: api.user,
+                    headers:{
+                        Authorization: headers.authorization(tokenType, token),
+                        'Content-type': headers.json
+                    },
+                    data: add
+                }).then(function(response){
+                    return response.data.data;
+                });
+            },
+
+            createEvaluee: function(evaluee){
+                var user = token || Auth.userLogged()
+                ,   tokenType = user.token_type
+                ,   token = user.access_token;
+
+                return $http({
+                    method: 'post',
+                    url: api.evaluee,
+                    headers:{
+                        Authorization: headers.authorization(tokenType, token),
+                        'Content-type': headers.json
+                    },
+                    data: evaluee
+                }).then(function(response){
+                    return response.data.data;
+                });
+            },
+
             recover: function(mail){
 
                 var user = Auth.clientLogged()

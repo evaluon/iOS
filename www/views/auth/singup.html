@@ -1,76 +1,104 @@
 <ion-view view-title="Registro">
     <ion-content class="padding">
-        <form class="list" name="singupForm">
-            <label class="item item-input item-stacked-label">
+        <form class="list" name="singupForm"
+                ng-submit="singup(user, evaluee, singupForm)"
+                novalidate>
+            <label class="item item-input item-stacked-label" for="id">
                 <span class="input-label">Número de documento</span>
-                <input type="text">
+                <input type="number" ng-model="user.id" name="id" required>
+                <span ng-show="validate(singupForm, 'id')" class="text-assertive">
+                    Tiene que ser un número
+                </span>
             </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Nombres</span>
-                <input type="text">
+            <label class="item item-input item-stacked-label"
+                    for="first_name">
+                <span class="input-label" >Nombres</span>
+                <input type="text" ng-model="user.first_name"
+                        name="first_name" required>
+                <span ng-show="validate(singupForm, 'first_name')"
+                    class="text-assertive">
+                    Campo obligatorio
+                </span>
             </label>
-            <label class="item item-input item-stacked-label">
+            <label class="item item-input item-stacked-label" for="last_name">
                 <span class="input-label">Apellidos</span>
-                <input type="text" placeholder="">
+                <input type="text" name="last_name" ng-model="user.last_name"
+                        required>
+                <span ng-show="validate(singupForm, 'last_name')"
+                    class="text-assertive">
+                    Campo obligatorio
+                </span>
             </label>
-            <label class="item item-input item-stacked-label">
+            <label class="item item-input item-stacked-label" for="birth_date">
                 <span class="input-label">Fecha de nacimiento</span>
-                <input type="number" placeholder="aammdd" ng-maxlength="8" 
-                        ng-minlength="8">
+                <input type="number" placeholder="aaaammdd" ng-maxlength="8"
+                        ng-minlength="8" name="birth_date"
+                        ng-model="user.birth_date" required>
+                <span ng-show="validate(singupForm, 'birth_date')"
+                        class="text-assertive">
+                        Fecha de nacimiento no válida
+                </span>
             </label>
-             <label class="item item-input item-stacked-label">
+             <label class="item item-input item-stacked-label" for="mail">
                  <span class="input-label">Correo</span>
-                 <input type="email">
+                 <input type="email" name="mail" ng-model="user.mail" required
+                 ng-pattern="/^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i">
+                 <span ng-show="validate(singupForm, 'mail')"
+                    class="text-assertive">
+                     Tiene que ser un correo válido
+                 </span>
              </label>
-             <label class="item item-input item-stacked-label">
-                 <span class="input-label">Contraseña</span>
-                 <input type="password">
+             <label class="item item-input item-stacked-label" for="password">
+                <span class="input-label">Contraseña</span>
+                <input type="password" name="password" ng-model="user.password"
+                        ng-minlength="6" required>
+                <span ng-show="validate(singupForm, 'password')"
+                    class="text-assertive">
+                    Tiene que tener mínimo 6 carácteres
+                </span>
              </label>
-             <label class="item item-input item-stacked-label">
+             <label class="item item-input item-stacked-label" for="password2">
                  <span class="input-label">Repite la contraseña</span>
-                 <input type="password">
+                 <input type="password" name="password2" ng-model="user.password2"
+                         required>
+                <span ng-show="(user.password != user.password2) && singupForm.password2.$dirty"
+                        class="text-assertive">
+                        Las contraseñas no coinciden
+                </span>
              </label>
-             <label class="item item-input item-select">
-                 <div class="input-label">
+             <label class="item item-input item-select" for="gender">
+                 <div class="input-label" >
                    Género
                  </div>
-                 <select>
-                     <option ng-repeat="gender in genders">
-                         {{gender.description}}
-                     </option>
+                 <select ng-model="evaluee.gender_id" name="gender" required
+                     ng-options="gender.id as gender.description for gender in genders">
                  </select>
               </label>
-             <label class="item item-input item-select">
+             <label class="item item-input item-select" for="disability">
                  <div class="input-label">
                    Condición visual
                  </div>
-                 <select>
-                     <option ng-repeat="disability in disabilities">
-                         {{disability.description}}
-                     </option>
+                 <select ng-model="evaluee.disability_id" name="disability" required
+                 ng-options="disability.id as disability.description for disability in disabilities">
                  </select>
               </label>
-             <label class="item item-input item-select">
+             <label class="item item-input item-select" for="type">
                  <div class="input-label">
                    Tipo de usuario
                  </div>
-                 <select>
-                     <option ng-repeat="type in types">
-                         {{type.description}}
-                     </option>
+                 <select ng-model="evaluee.evaluee_type" name="type" required
+                 ng-options="type.id as type.description for type in types">
                  </select>
               </label>
-             <label class="item item-input item-select">
+             <label class="item item-input item-select" for="level">
                  <div class="input-label">
                    Nivel de formación
                  </div>
-                 <select>
-                     <option ng-repeat="level in levels">
-                         {{level.description}}
-                     </option>
+                 <select ng-model="evaluee.level_id" name="level" required
+                 ng-options="level.id as level.description for level in levels">
                  </select>
               </label>
-              <input type="button" class="button button-block button-calm"
+              <input type="submit" class="button button-block button-calm"
                       value="Registrar">
         </form>
     </ion-content>
