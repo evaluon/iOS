@@ -94,7 +94,16 @@
                 url: '/indicators',
                 templateUrl: 'views/user/indicators/indicators.html',
                 controller: 'IndicatorsController'
-            })
+            });
+
+        // Config states
+
+        $stateProvider
+
+            .state('config', {
+                url: '/configurations',
+                templateUrl: 'views/config/config.html'
+            });
     };
 
 })();
