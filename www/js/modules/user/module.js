@@ -102,7 +102,11 @@
 
             .state('config', {
                 url: '/configurations',
-                templateUrl: 'views/config/config.html'
+                templateUrl: 'views/user/config/config.html'
+            })
+            .state('config-help', {
+                url: '/help',
+                templateUrl: 'views/user/config/help.html'
             });
     };
 
