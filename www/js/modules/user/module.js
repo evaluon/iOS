@@ -111,6 +111,14 @@
             .state('config-about', {
                 url: '/config/about',
                 templateUrl: 'views/user/config/about.html'
+            })
+            .state('config-update', {
+                url: '/config/update',
+                templateUrl: 'views/user/config/update.html'
+            })
+            .state('config-changePassword', {
+                url: '/config/change-password',
+                templateUrl: 'views/user/config/changePassword.html'
             });
     };
 
