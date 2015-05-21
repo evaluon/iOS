@@ -101,12 +101,16 @@
         $stateProvider
 
             .state('config', {
-                url: '/configurations',
+                url: '/config',
                 templateUrl: 'views/user/config/config.html'
             })
             .state('config-help', {
-                url: '/help',
+                url: '/config/help',
                 templateUrl: 'views/user/config/help.html'
+            })
+            .state('config-about', {
+                url: '/config/about',
+                templateUrl: 'views/user/config/about.html'
             });
     };
 
