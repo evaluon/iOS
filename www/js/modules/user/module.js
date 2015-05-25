@@ -114,11 +114,13 @@
             })
             .state('config-update', {
                 url: '/config/update',
-                templateUrl: 'views/user/config/update.html'
+                templateUrl: 'views/user/config/update.html',
+                controller: 'UpdateController'
             })
             .state('config-changePassword', {
                 url: '/config/change-password',
-                templateUrl: 'views/user/config/changePassword.html'
+                templateUrl: 'views/user/config/changePassword.html',
+                controller: 'ChangePasswordController'
             });
     };
 
