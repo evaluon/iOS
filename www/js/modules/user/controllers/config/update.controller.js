@@ -10,6 +10,7 @@
         var vm = $scope;
 
         vm.user = {};
+        vm.evaluee = {};
         getUser();
 
         vm.disabilities = evalueeInfo.disabilities;
@@ -25,6 +26,7 @@
                 data.birth_date = data.birth_date.getUTCFullYear() + '' + (data.birth_date.getUTCMonth()+1) + '' + data.birth_date.getUTCDate();
                 data.birth_date = Number(data.birth_date);
                 vm.user = data;
+                vm.evaluee = data.evaluee;
 
             });
         };
