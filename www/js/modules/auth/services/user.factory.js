@@ -80,6 +80,27 @@
                 }).then(function(response){
                     return response.data.data
                 });
+            },
+
+            changePassword: function(password){
+
+                var user = Auth.clientLogged()
+                ,   tokenType = user.token_type
+                ,   token = user.access_token;
+
+                return $http({
+                    method:'put',
+                    url: api.user,
+                    headers:{
+                        'Authorization': headers.authorization(tokenType, token),
+                        'Content-type': headers.json
+                    },
+                    data:{
+                        password: CryptoJS.SHA1(password).toString()
+                    }
+                }).then(function(response){
+                    return response.data.data;
+                });
             }
         };
     };
