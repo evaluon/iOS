@@ -84,7 +84,7 @@
 
             changePassword: function(password){
 
-                var user = Auth.clientLogged()
+                var user = Auth.userLogged()
                 ,   tokenType = user.token_type
                 ,   token = user.access_token;
 
