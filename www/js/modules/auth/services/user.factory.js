@@ -101,6 +101,44 @@
                 }).then(function(response){
                     return response.data.data;
                 });
+            },
+
+            update: function(data){
+
+                var user = Auth.userLogged()
+                ,   tokenType = user.token_type
+                ,   token = user.access_token;
+
+                return $http({
+                    method: 'put',
+                    url: api.user,
+                    headers:{
+                        'Authorization': headers.authorization(tokenType, token),
+                        'Content-type': headers.json
+                    },
+                    data: data
+                }).then(function(response){
+                    return response.data.data;
+                });
+            },
+
+            updateEvaluee: function(evaluee){
+
+                var user = Auth.userLogged()
+                ,   tokenType = user.token_type
+                ,   token = user.access_token;
+
+                return $http({
+                    method: 'put',
+                    url: api.evaluee,
+                    headers:{
+                        'Authorization': headers.authorization(tokenType, token),
+                        'Content-type': headers.json
+                    },
+                    data: evaluee
+                }).then(function(response){
+                    return response.data.data;
+                });
             }
         };
     };

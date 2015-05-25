@@ -1,13 +1,13 @@
 <ion-view view-title="Actualizar perfil">
     <ion-content class="padding">
-        <form class="list" name="singupForm"
-                ng-submit="singup(user, evaluee, singupForm)"
+        <form class="list" name="updateForm"
+                ng-submit="update(user, evaluee, updateForm)"
                 novalidate>
             <label class="item item-input item-stacked-label" for="id">
                 <span class="input-label">Número de documento</span>
                 <input type="number" ng-model="user.id" name="id"
                         ng-disabled="true" required>
-                <span ng-show="validate(singupForm, 'id')" class="text-assertive">
+                <span ng-show="validate(updateForm, 'id')" class="text-assertive">
                     Tiene que ser un número
                 </span>
             </label>
@@ -16,7 +16,7 @@
                 <span class="input-label" >Nombres</span>
                 <input type="text" ng-model="user.first_name"
                         name="first_name" required>
-                <span ng-show="validate(singupForm, 'first_name')"
+                <span ng-show="validate(updateForm, 'first_name')"
                     class="text-assertive">
                     Campo obligatorio
                 </span>
@@ -25,7 +25,7 @@
                 <span class="input-label">Apellidos</span>
                 <input type="text" name="last_name" ng-model="user.last_name"
                         required>
-                <span ng-show="validate(singupForm, 'last_name')"
+                <span ng-show="validate(updateForm, 'last_name')"
                     class="text-assertive">
                     Campo obligatorio
                 </span>
@@ -35,7 +35,7 @@
                 <input type="number" placeholder="aaaammdd" ng-maxlength="8"
                         ng-minlength="8" name="birth_date"
                         ng-model="user.birth_date" required>
-                <span ng-show="validate(singupForm, 'birth_date')"
+                <span ng-show="validate(updateForm, 'birth_date')"
                         class="text-assertive">
                         Fecha de nacimiento no válida
                 </span>
@@ -44,7 +44,7 @@
                  <span class="input-label">Correo</span>
                  <input type="email" name="mail" ng-model="user.mail" required
                  ng-pattern="/^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i">
-                 <span ng-show="validate(singupForm, 'mail')"
+                 <span ng-show="validate(updateForm, 'mail')"
                     class="text-assertive">
                      Tiene que ser un correo válido
                  </span>
