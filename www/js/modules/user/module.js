@@ -41,7 +41,7 @@
             .state('evaluation-knowledgeAreas', {
                 url: '/evaluation/test/:id/knowledge-areas',
                 templateUrl: 'views/user/evaluation/knowledge-areas.html',
-                controller: 'Evaluation.KnowledgeAreas',
+                controller: 'KnowledgeAreasController',
                 cache: false
             })
             .state('evaluation-test', {

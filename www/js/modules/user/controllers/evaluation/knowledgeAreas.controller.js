@@ -3,7 +3,7 @@
 
     angular
         .module('evaluon.user')
-        .controller('KnowledgeAreas', KnowledgeAreas);
+        .controller('KnowledgeAreasController', KnowledgeAreas);
 
     function KnowledgeAreas($scope, $state, KnowledgeArea, list, msg){
 
