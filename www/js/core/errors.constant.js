@@ -28,7 +28,8 @@
             test_unavailable: 'La prueba seleccionada no está disponible',
             client_not_found: "Cliente de aplicación no encontrado",
             results_not_found: "Los resultados del evaluado son muy pocos para hacer una estadística o no se encontraron. Posiblemente el evaluado es inválido",
-            no_questions_available: "No hay preguntas disponibles"
+            no_questions_available: "No hay preguntas disponibles",
+            test_not_found: "No hay test disponibles"
         }
     };
 
