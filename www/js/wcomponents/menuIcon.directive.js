@@ -12,7 +12,8 @@
             scope: {
                 ref: '@',
                 img: '@',
-                description: '@'
+                description: '@',
+                title: '@'
             }
         };
     };
