@@ -3,9 +3,9 @@
 
     angular
         .module('evaluon.user')
-        .controller('KnowledgeAreasController', KnowledgeAreas);
+        .controller('KnowledgeAreasController', KnowledgeAreasController);
 
-    function KnowledgeAreas($scope, $state, KnowledgeArea, list, msg){
+    function KnowledgeAreasController($scope, $state, KnowledgeArea, list, msg){
 
         var test = $state.params.id
         ,   name = $state.current.name;

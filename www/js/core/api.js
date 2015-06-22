@@ -6,7 +6,7 @@
             url: {
                 protocol: 'http',
                 //host: 'evaluon.gentebool.com:80'
-                host: '186.154.240.187:80'
+                host: '186.154.240.187:3004'
             },
             route: function(path){
                 var url = this.url;
