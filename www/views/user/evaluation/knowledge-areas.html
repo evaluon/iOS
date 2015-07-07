@@ -3,7 +3,7 @@
         <div class="row padding" ng-repeat="row in knowledgeAreas">
             <div class="col col-50 icon" ng-repeat="knowledgeArea in row">
                 <menu-icon ref="{{routes.test}}({id: {{routes.testId}}, area: '{{knowledgeArea.id}}' })"
-                        img="{{knowledgeArea.image.location}}"
+                        img="{{knowledgeArea.image.location  | image}}"
                         description="{{knowledgeArea.id}}"
                         title="{{knowledgeArea.id}}">
                 </menu-icon>
