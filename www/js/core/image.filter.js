@@ -2,12 +2,12 @@
 
     angular
         .module('evaluon')
-        .value('imageUrlBase', '186.154.240.187:1045')
+        .value('imgUrlBase', 'http://186.154.240.187:1045')
         .filter('image', image);
 
-    function image(imageUrlBase) {
+    function image(imgUrlBase) {
         return function(img){
-            return '{0}/{1}'.format(imageUrlBase, img);
+            return '{0}/{1}'.format(imgUrlBase, img);
         };
     }
 })();
