@@ -3,7 +3,7 @@
 		<div class="row padding" ng-repeat="row in institutions">
 			<div class="col col-50 icon" ng-repeat="institution in row">
        			 <menu-icon ref="{{routes.groups}}({id: {{institution.id}}})"
-							img="http://cdn.gentebool.com/evaluon/{{institution.image.location}}"
+							img="{{institution.image.location}}"
 							description="{{institution.name}}"
 							title="{{institution.name}}">
 				</menu-icon>
