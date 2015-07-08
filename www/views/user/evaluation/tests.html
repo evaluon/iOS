@@ -3,7 +3,7 @@
         <ion-list>
             <ion-item ng-repeat="test in tests">
                 <a class="item-content"
-                    ui-sref="{{routes.password}}({id: {{test.id}}})">
+                    ui-sref="{{routes.password}}({id: test.id})">
                     {{test.description}}
                 </a>
             </ion-item>

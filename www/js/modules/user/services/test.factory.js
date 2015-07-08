@@ -35,10 +35,29 @@
                 ,   token = user.access_token;
 
                 return $http({
-                    method: 'get',
+                    method: 'post',
                     url: api.id(api.test, api.self),
                     headers:{
                         'Authorization': headers.authorization(tokenType, token)
+                    }
+                }).then(function(response){
+                    return response.data.data;
+                });
+            },
+
+            createSelf: function(){
+                var user = Auth.userLogged()
+                ,   tokenType = user.token_type
+                ,   token = user.access_token;
+
+                return $http({
+                    method: 'post',
+                    url: '{0}{1}'.format(api.id(api.test, test), api.open),
+                    headers: {
+                        'Authorization': headers.authorization(tokenType, token)
+                    },
+                    data: {
+                        hotp: hotp
                     }
                 }).then(function(response){
                     return response.data.data;

@@ -22,10 +22,19 @@
 
             if(name == "self"){
                 Test.getSelfList().then(function(data){
-                    $scope.tests = data;
+                    console.log(data);
+                    if(data.length === 0){
+                        Test.createSelf().then(function(){
+                            getTests();
+                        }).catch(function(){
+                            $state.go('home');
+                        });
+                    }
+                    else
+                    $scope.tests = [data];
                 }).catch(function(){
                     $ionicHistory.goBack();
-                })
+                });
             }
             else{
                 Test.getList(group).then(function(data){
@@ -34,7 +43,7 @@
                     $ionicHistory.goBack();
                 });
             }
-        };
+        }
 
-    };
+    }
 })();
