@@ -21,22 +21,26 @@
             .state('evaluation', {
                url: '/evaluation',
                templateUrl: 'views/user/evaluation/institutions.html',
-               controller: 'InstitutionsController'
+               controller: 'InstitutionsController',
+               cache: false
             })
             .state('evaluation-groups', {
                 url: '/evaluation/institution/:id/groups',
                 templateUrl: 'views/user/evaluation/groups.html',
-                controller: 'GroupsController'
+                controller: 'GroupsController',
+                cache: false
             })
             .state('evaluation-tests', {
                 url: '/evaluation/group/:id/tests',
                 templateUrl: 'views/user/evaluation/tests.html',
-                controller: 'TestsController'
+                controller: 'TestsController',
+                cache: false
             })
             .state('evaluation-password', {
                 url: '/evaluation/test/:id/password',
                 templateUrl: 'views/user/evaluation/password.html',
-                controller: 'PasswordController'
+                controller: 'PasswordController',
+                cache: false
             })
             .state('evaluation-knowledgeAreas', {
                 url: '/evaluation/test/:id/knowledge-areas',
@@ -47,7 +51,7 @@
             .state('evaluation-test', {
                 url: '/evaluation/test/:id/knowledge-area/:area',
                 templateUrl: 'views/user/evaluation/test.html',
-                controller: 'TestController'
+                controller: 'TestController',
             });
 
 
@@ -58,7 +62,8 @@
             .state('self',{
                 url: '/self/tests',
                 templateUrl: 'views/user/evaluation/tests.html',
-                controller: 'TestsController'
+                controller: 'TestsController',
+                cache: false
             })
             .state('self-knowledgeAreas', {
                 url: '/self/test/:id/knowledge-areas',
@@ -69,7 +74,7 @@
             .state('self-test', {
                 url: '/self/test/:id/knowledge-area/:area',
                 templateUrl: 'views/user/evaluation/test.html',
-                controller: 'TestController'
+                controller: 'TestController',
             });
         //Results states
 
@@ -78,12 +83,14 @@
             .state('results-institution', {
                url: '/results/institutions',
                templateUrl: 'views/user/results/institutions.html',
-               controller: 'Results.InstitutionsController'
+               controller: 'Results.InstitutionsController',
+               cache: false
             })
             .state('results', {
                 url: '/institution/:id/results',
                 templateUrl: 'views/user/results/results.html',
-                controller: 'ResultsController'
+                controller: 'ResultsController',
+                cache: false
             });
 
         //Indicators states
@@ -93,7 +100,8 @@
             .state('indicators', {
                 url: '/indicators',
                 templateUrl: 'views/user/indicators/indicators.html',
-                controller: 'IndicatorsController'
+                controller: 'IndicatorsController',
+                cache: false
             });
 
         // Config states
@@ -122,6 +130,6 @@
                 templateUrl: 'views/user/config/changePassword.html',
                 controller: 'ChangePasswordController'
             });
-    };
+    }
 
 })();
