@@ -5,7 +5,7 @@
         .module('evaluon.user')
         .controller('UpdateController', UpdateController);
 
-    function UpdateController($scope, evalueeInfo, User, msg, $state){
+    function UpdateController($scope, evalueeInfo, User, msg, $state, $filter){
 
         var vm = $scope;
 
@@ -23,14 +23,14 @@
             User.get().then(function(data){
                 data.id = Number(data.id);
                 data.birth_date = new Date(data.birth_date);
-                data.birth_date = data.birth_date.getUTCFullYear() + '' + (data.birth_date.getUTCMonth()+1) + '' + data.birth_date.getUTCDate();
+                data.birth_date = $filter('date')(data.birth_date, 'yyyyMMdd');
                 data.birth_date = Number(data.birth_date);
                 vm.user = data;
                 vm.evaluee = data.evaluee;
                 delete vm.user.evaluee;
 
             });
-        };
+        }
 
         function update(user, evaluee, form){
             user = angular.copy(user);
@@ -79,4 +79,4 @@
         }
 
     }
-})()
+})();
