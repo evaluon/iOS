@@ -27,11 +27,9 @@
                     Auth.password(user.mail, password).then(function(auth){
                         Auth.login(auth);
                         User.createEvaluee(evaluee).then(function(data){
-                            console.log(data);
                             msg.show('Exito', 'Usuario creado satisfactoriamente');
                             $state.go('home');
-
-                        })
+                        });
                     });
                 });
             }
