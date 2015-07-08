@@ -2,7 +2,13 @@
     <ion-content class="padding">
         <form class="list" name="singupForm"
                 ng-submit="singup(user, evaluee, singupForm)"
-                novalidate>
+                novalidate
+                ng-init="
+                evaluee.gender_id = 1;
+                evaluee.disability_id = 0;
+                evaluee.evaluee_type = 1;
+                evaluee.level_id = 1;
+                ">
             <label class="item item-input item-stacked-label" for="id">
                 <span class="input-label">Número de documento</span>
                 <input type="number" ng-model="user.id" name="id" required>
